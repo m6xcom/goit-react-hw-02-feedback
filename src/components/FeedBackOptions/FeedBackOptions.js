@@ -9,21 +9,15 @@ class FeedBackOptions extends Component {
   render() {
     const { onLeaveFeedback } = this.props;
     return (
-      <ul className={style.buttonsList}>
+      <ul onClick={onLeaveFeedback} className={style.buttonsList}>
         <li>
-          <button name="good" onClick={onLeaveFeedback}>
-            Good
-          </button>
+          <button name="good">Good</button>
         </li>
         <li>
-          <button name="neutral" onClick={onLeaveFeedback}>
-            Neutral
-          </button>
+          <button name="neutral">Neutral</button>
         </li>
         <li>
-          <button name="bad" onClick={onLeaveFeedback}>
-            Bad
-          </button>
+          <button name="bad">Bad</button>
         </li>
       </ul>
     );

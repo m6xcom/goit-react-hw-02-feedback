@@ -12,13 +12,7 @@ class App extends Component {
   };
   onLeaveFeedback = (e) => {
     this.setState((prevState) => {
-      if (e.target.name === "good") {
-        return { good: prevState.good + 1 };
-      } else if (e.target.name === "neutral") {
-        return { neutral: prevState.neutral + 1 };
-      } else if (e.target.name === "bad") {
-        return { bad: prevState.bad + 1 };
-      }
+      return { [e.target.name]: prevState[e.target.name] + 1 };
     });
   };
   countPositiveFeedbackPercentage = () => {
