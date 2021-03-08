@@ -4,6 +4,8 @@ import FeedBackOptions from "../FeedBackOptions/FeedBackOptions";
 import Statistics from "../Statistics/Statistics";
 import "./App.css";
 
+const feedBackOptions = ["good", "neutral", "bad"];
+
 class App extends Component {
   state = {
     good: 0,
@@ -30,7 +32,10 @@ class App extends Component {
     return (
       <>
         <SectionTittle title={"Please leave feedback"}>
-          <FeedBackOptions onLeaveFeedback={this.onLeaveFeedback} />
+          <FeedBackOptions
+            onLeaveFeedback={this.onLeaveFeedback}
+            options={feedBackOptions}
+          />
         </SectionTittle>
         <SectionTittle title={"Statistics"}>
           <Statistics
