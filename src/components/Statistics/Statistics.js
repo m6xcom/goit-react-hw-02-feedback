@@ -21,32 +21,29 @@ class Statistics extends Component {
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.props;
     return (
-      <>
-        <h2>Statistics</h2>
-        <ul className={style.statisticsList}>
-          {total !== 0 ? (
-            <>
-              <li>
-                <p>Good:{good}</p>
-              </li>
-              <li>
-                <p>Neutral:{neutral}</p>
-              </li>
-              <li>
-                <p>Bad:{bad}</p>
-              </li>
-              <li>
-                <p>Total:{total}</p>
-              </li>
-              <li>
-                <p>Positive feedback:{positivePercentage}%</p>
-              </li>
-            </>
-          ) : (
-            <Notification message={"No feedback given"} />
-          )}
-        </ul>
-      </>
+      <ul className={style.statisticsList}>
+        {total !== 0 ? (
+          <>
+            <li>
+              <p>Good:{good}</p>
+            </li>
+            <li>
+              <p>Neutral:{neutral}</p>
+            </li>
+            <li>
+              <p>Bad:{bad}</p>
+            </li>
+            <li>
+              <p>Total:{total}</p>
+            </li>
+            <li>
+              <p>Positive feedback:{positivePercentage}%</p>
+            </li>
+          </>
+        ) : (
+          <Notification message={"No feedback given"} />
+        )}
+      </ul>
     );
   }
 }

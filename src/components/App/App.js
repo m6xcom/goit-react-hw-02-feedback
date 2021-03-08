@@ -28,16 +28,20 @@ class App extends Component {
   render() {
     let { good, neutral, bad } = this.state;
     return (
-      <SectionTittle title={"Please leave feedback"}>
-        <FeedBackOptions onLeaveFeedback={this.onLeaveFeedback} />
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={this.countTotalFeedback()}
-          positivePercentage={this.countPositiveFeedbackPercentage()}
-        />
-      </SectionTittle>
+      <>
+        <SectionTittle title={"Please leave feedback"}>
+          <FeedBackOptions onLeaveFeedback={this.onLeaveFeedback} />
+        </SectionTittle>
+        <SectionTittle title={"Statistics"}>
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
+          />
+        </SectionTittle>
+      </>
     );
   }
 }
