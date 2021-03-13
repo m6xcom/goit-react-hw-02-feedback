@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import shortId from "shortid";
 import style from "./FeedBackOptions.module.css";
 
 const FeedBackOptions = ({ onLeaveFeedback, options }) => {
   return (
     <ul onClick={onLeaveFeedback} className={style.buttonsList}>
       {options.map((el) => (
-        <li key={shortId.generate()}>
+        <li key={el}>
           <button name={el}>{el[0].toUpperCase() + el.slice(1)}</button>
         </li>
       ))}
